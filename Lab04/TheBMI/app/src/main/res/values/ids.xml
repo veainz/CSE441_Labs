@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnBMI" type="id" />
+    <item name="editTen" type="id" />
+    <item name="editChieucao" type="id" />
+    <item name="editCannang" type="id" />
+    <item name="editBMI" type="id" />
+    <item name="editChuanDoan" type="id" />
+</resources>
