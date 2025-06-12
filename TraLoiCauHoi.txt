@@ -60,3 +60,48 @@ TableLayout (gốc)
   → TextView: "Chuẩn đoán:"
   → EditText: edtChuanDoan
 
+Lab08.
+    Bài 1:
+           Màn hình chính (MainActivity):
+
+           Hiển thị 2 nút: "CALL PHONE" và "SEND SMS" với giao diện màu xanh lá trên nền xám
+           Khi nhấn nút "CALL PHONE": chuyển sang màn hình CallPhoneActivity
+           Khi nhấn nút "SEND SMS": chuyển sang màn hình SendSMSActivity
+
+           Màn hình CallPhoneActivity:
+
+           Hiển thị EditText để nhập số điện thoại
+           Có nút gọi điện (hình điện thoại) và nút "BACK"
+           Khi nhập số và nhấn nút gọi: ứng dụng mở ứng dụng gọi điện của hệ thống với số đã nhập
+           Nút "BACK" quay về màn hình chính
+
+           Màn hình SendSMSActivity:
+
+           Hiển thị EditText để nhập số điện thoại
+           Có nút gửi SMS (hình tin nhắn) và nút "BACK"
+           Khi nhập số và nhấn nút SMS: ứng dụng mở ứng dụng tin nhắn của hệ thống với số đã nhập
+           Nút "BACK" quay về màn hình chính
+
+           Nhận xét:
+           Ứng dụng hoạt động đúng chức năng yêu cầu
+           Giao diện đơn giản, dễ sử dụng
+           Sử dụng Intent một cách hiệu quả để gọi các ứng dụng hệ thống
+           Navigation giữa các Activity hoạt động mượt mà
+           Tuy nhiên:
+           Cần phải cấp quyền CALL_PHONE và SEND_SMS trong AndroidManifest.xml
+           Chưa có xử lý lỗi khi người dùng nhập số điện thoại không hợp lệ
+    Bài 2:
+            Kết quả hoạt động:
+
+            Ứng dụng khởi động thành công, hiển thị giao diện với ImageView chứa ảnh mặc định và nút ImageButton ở dưới
+            Khi nhấn vào nút máy ảnh, ứng dụng sẽ mở camera của thiết bị
+            Sau khi chụp ảnh và nhấn OK, ảnh vừa chụp sẽ hiển thị trên ImageView thay thế ảnh ban đầu
+
+            Nhận xét:
+
+            Chương trình hoạt động đúng yêu cầu đề bài, thực hiện được chức năng chụp ảnh và hiển thị ảnh
+            Giao diện đơn giản, dễ sử dụng với layout dọc (LinearLayout vertical)
+            Sử dụng Intent với action ACTION_IMAGE_CAPTURE để gọi camera hệ thống
+            Code sử dụng ActivityResultLauncher hiện đại, tương thích với Android phiên bản mới
+            Ảnh chụp được hiển thị dưới dạng thumbnail (ảnh nhỏ) do sử dụng extras "data"
+            Cần quyền CAMERA đã được khai báo trong AndroidManifest để truy cập camera
