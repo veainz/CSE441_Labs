@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#f0f0f0">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xử lý Kết quả"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#6A1B9A"
+        android:gravity="center"
+        android:background="#E1BEE7"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Nhận A:"
+            android:textSize="16sp"
+            android:textColor="#E91E63"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:id="@+id/edtAA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:editable="false"
+            android:focusable="false"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Nhận B:"
+            android:textSize="16sp"
+            android:textColor="#E91E63"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:id="@+id/edtBB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:editable="false"
+            android:focusable="false"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnsendtong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TRẢ VỀ TỔNG"
+            android:textColor="#FFFFFF"
+            android:background="#6A1B9A"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:layout_marginRight="10dp" />
+
+        <Button
+            android:id="@+id/btnsendhieu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TRẢ VỀ HIỆU"
+            android:textColor="#FFFFFF"
+            android:background="#6A1B9A"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+</LinearLayout>
