@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chuyển đổi năm dương lịch"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="#4CAF50"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:gravity="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Năm dương lịch:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editnamduonglich"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="2013"
+            android:inputType="number"
+            android:layout_marginLeft="8dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chuyển đổi"
+            android:layout_span="2"
+            android:layout_gravity="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Năm âm lịch:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quý Tỵ"
+            android:textSize="16sp"
+            android:background="#FFEB3B"
+            android:padding="4dp"
+            android:layout_marginLeft="8dp" />
+
+    </TableRow>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Hướng dẫn sử dụng:\n1. Nhập năm dương lịch vào ô trên\n2. Nhấn nút Chuyển đổi\n3. Kết quả sẽ hiển thị ở ô màu vàng"
+        android:textSize="14sp"
+        android:padding="8dp"
+        android:background="#F5F5F5" />
+
+</TableLayout>

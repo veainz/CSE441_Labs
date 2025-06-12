@@ -1,0 +1,62 @@
+Lab03.
+	Câu trả lời Lab 3 nằm trong Lab03!
+
+Lab04. 
+	III. Đánh giá kết quả:
+		1. Giải thích các đoạn code sau:
+			android:layout_width="match_parent"
+
+			Thiết lập chiều rộng của view bằng với chiều rộng của view cha (parent), tức là chiếm toàn bộ chiều rộng có sẵn.
+
+			android:layout_height="wrap_content"
+
+			Thiết lập chiều cao của view vừa đủ để chứa nội dung bên trong, tự động điều chỉnh theo kích thước nội dung.
+
+			android:orientation="vertical"
+
+			Sắp xếp các view con theo chiều dọc (từ trên xuống dưới). (Lưu ý: thuộc tính này không có trong layout hiện tại vì đang dùng TableLayout)
+
+		2. So sánh sự khác nhau:
+			android:gravity="center" & android:layout_gravity="center"
+
+			android:gravity="center": Căn giữa nội dung bên trong view đó
+			android:layout_gravity="center": Căn giữa chính view đó trong view cha của nó
+
+			padding & margin
+
+			padding: Khoảng cách từ viền của view đến nội dung bên trong view đó
+			margin: Khoảng cách từ viền của view đến các view khác xung quanh nó
+
+		3. Giải thích ý nghĩa các dòng lệnh:
+			DecimalFormat dcf=new DecimalFormat("#.0"); editBMI.setText(dcf.format(BMI));
+
+			Tạo đối tượng DecimalFormat để định dạng số thập phân với 1 chữ số sau dấu phẩy (#.0), sau đó hiển thị giá trị BMI đã được định dạng lên EditText editBMI.
+
+			double BMI=W/Math.pow(H, 2);
+
+			Tính chỉ số BMI theo công thức BMI = Cân nặng / (Chiều cao)², trong đó Math.pow(H, 2) tính H mũ 2.
+
+			double H=Double.parseDouble(editChieucao.getText()+"");
+
+			Lấy text từ EditText editChieucao, chuyển đổi thành chuỗi (+""), rồi chuyển đổi chuỗi đó thành số thực kiểu double để lưu vào biến H.
+
+		4. Sơ đồ cây phân cấp Layout:
+TableLayout (gốc)
+→ TextView: "Chương trình tính chỉ số BMI"
+→ TableRow 1
+  → TextView: "Nhập Tên:"
+  → EditText: edtten
+→ TableRow 2
+  → TextView: "Chiều Cao:"
+  → EditText: edtchieucao
+→ TableRow 3
+  → TextView: "Cân Nặng:"
+  → EditText: edtcannang
+→ Button: btnBMI – "Tính BMI"
+→ TableRow 4
+  → TextView: "BMI ="
+  → EditText: edtBMI
+→ TableRow 5
+  → TextView: "Chuẩn đoán:"
+  → EditText: edtChuanDoan
+

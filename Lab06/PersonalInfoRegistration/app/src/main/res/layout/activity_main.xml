@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="#607D8B"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Họ tên -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ tên:"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/edtten"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Doan Ai Nuong"
+                android:inputType="textPersonName"
+                android:layout_marginLeft="8dp" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- CMND -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CMND:"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/edtcmnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="250592829"
+                android:inputType="number"
+                android:maxLength="9"
+                android:layout_marginLeft="8dp" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- Bằng cấp -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bằng cấp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="#2196F3"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/idgruop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rdtrungcap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trung cấp"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rdcaodang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cao đẳng"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/rddaihoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đại học"
+            android:checked="true"
+            android:layout_weight="1" />
+
+    </RadioGroup>
+
+    <!-- Sở thích -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sở thích"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="#FF9800"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <CheckBox
+            android:id="@+id/chkdocbao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đọc báo"
+            android:checked="true"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/chkdocsach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đọc sách"
+            android:layout_weight="1" />
+
+        <CheckBox
+            android:id="@+id/chkcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đọc coding"
+            android:checked="true"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Thông tin bổ sung -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin bổ sung"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="#2196F3"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edtbosung"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="Senior Programmer&#10;Senior saler"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button -->
+    <Button
+        android:id="@+id/btnsend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gửi thông tin"
+        android:textSize="16sp"
+        android:background="#9E9E9E"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>
