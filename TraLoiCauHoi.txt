@@ -105,3 +105,14 @@ Lab08.
             Code sử dụng ActivityResultLauncher hiện đại, tương thích với Android phiên bản mới
             Ảnh chụp được hiển thị dưới dạng thumbnail (ảnh nhỏ) do sử dụng extras "data"
             Cần quyền CAMERA đã được khai báo trong AndroidManifest để truy cập camera
+
+Lab11.
+    Intent Filter là gì?
+    Intent Filter là một thành phần trong Android được khai báo trong file AndroidManifest.xml, có chức năng lọc và xác định các Intent mà một Activity, Service hoặc BroadcastReceiver có thể nhận và xử lý. Nó hoạt động như một bộ lọc để Android system biết được ứng dụng nào có thể xử lý một Intent cụ thể.
+
+    Vai trò của Intent Filter trong chương trình này:
+    Đăng ký khả năng xử lý URL: Intent Filter trong WebViewActivity đăng ký với Android system rằng ứng dụng có thể xử lý các URL có scheme "https", giúp ứng dụng trở thành một lựa chọn khi người dùng mở link web.
+    Tạo lựa chọn cho người dùng: Khi MainActivity gọi Intent.ACTION_VIEW với URL, Android system sẽ hiển thị dialog "Complete action using" cho phép người dùng chọn giữa Browser mặc định và ứng dụng của chúng ta.
+    Xử lý Intent tự động: Khi người dùng chọn ứng dụng của chúng ta, Intent Filter sẽ chuyển hướng Intent đến WebViewActivity, đồng thời truyền dữ liệu URL qua Intent.getData().
+    Tích hợp với hệ thống: Giúp ứng dụng tích hợp sâu hơn với Android system, cho phép ứng dụng có thể được gọi từ các ứng dụng khác khi có yêu cầu mở URL.
+    Lọc loại dữ liệu: Chỉ chấp nhận các Intent có action là VIEW và data scheme là "https", đảm bảo chỉ xử lý đúng loại Intent mong muốn.

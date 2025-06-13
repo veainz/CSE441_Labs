@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3F51B5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bai10_intent_filter_main"
+        android:textColor="#FFFFFF"
+        android:background="#3F51B5"
+        android:padding="16dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập Link Website"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="https://www.google.com.vn"
+        android:text="https://www.google.com.vn"
+        android:layout_margin="16dp"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E0E0E0" />
+
+    <Button
+        android:id="@+id/btnShowWebPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHOW WEB PAGE"
+        android:layout_margin="16dp"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
