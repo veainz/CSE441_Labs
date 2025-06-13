@@ -16,10 +16,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     String DB_PATH_SUFFIX = "/databases/";
-    SQLiteDatabase database = null;
     String DATABASE_NAME = "qlsach.db";
+    SQLiteDatabase database = null;
 
-    // Khai báo ListView
     ListView lv;
     ArrayList<String> mylist;
     ArrayAdapter<String> myadapter;
@@ -29,42 +28,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Gọi hàm Copy CSDL từ assets vào thư mục Databases
         processCopy();
 
-        // Mở CSDL lên để dùng
-        database = openOrCreateDatabase("qlsach.db", MODE_PRIVATE, null);
+        try {
+            String dbPath = getDatabasePath(DATABASE_NAME).getPath();
+            database = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error opening database: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            return;
+        }
 
-        // Tạo ListView
         lv = findViewById(R.id.lv);
         mylist = new ArrayList<>();
         myadapter = new ArrayAdapter<>(MainActivity.this,
                 android.R.layout.simple_list_item_1, mylist);
         lv.setAdapter(myadapter);
 
-        // Truy vấn CSDL và cập nhật hiển thị lên Listview
-        Cursor c = database.query("tbsach", null, null, null, null, null, null);
-        c.moveToFirst();
-        String data = "";
-        while (c.isAfterLast() == false) {
-            data = c.getString(0) + "-" + c.getString(1) + "-" + c.getString(2);
-            mylist.add(data);
-            c.moveToNext();
+        try {
+            Cursor c = database.query("tbsach", null, null, null, null, null, null);
+            if (c != null && c.moveToFirst()) {
+                do {
+                    String data = c.getInt(0) + " - " + c.getString(1) + " - " + c.getString(2);
+                    mylist.add(data);
+                } while (c.moveToNext());
+                c.close();
+            }
+            myadapter.notifyDataSetChanged();
+        } catch (Exception e) {
+            Toast.makeText(this, "Error reading database: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
-        c.close();
-        myadapter.notifyDataSetChanged();
     }
 
     private void processCopy() {
-        // private app
         File dbFile = getDatabasePath(DATABASE_NAME);
         if (!dbFile.exists()) {
             try {
-                CopyDataBaseFromAsset();
-                Toast.makeText(this, "Copying success from Assets folder",
-                        Toast.LENGTH_LONG).show();
+                copyDatabaseFromAssets();
+                Toast.makeText(this, "Copy database success", Toast.LENGTH_LONG).show();
             } catch (Exception e) {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Copy failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -73,35 +75,23 @@ public class MainActivity extends AppCompatActivity {
         return getApplicationInfo().dataDir + DB_PATH_SUFFIX + DATABASE_NAME;
     }
 
-    public void CopyDataBaseFromAsset() {
-        try {
-            InputStream myInput;
-            myInput = getAssets().open(DATABASE_NAME);
+    private void copyDatabaseFromAssets() throws IOException {
+        InputStream myInput = getAssets().open(DATABASE_NAME);
+        String outFileName = getDatabasePath();
 
-            // Path to the just created empty db
-            String outFileName = getDatabasePath();
+        File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
+        if (!f.exists()) f.mkdir();
 
-            // if the path doesn't exist first, create it
-            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
-            if (!f.exists())
-                f.mkdir();
+        OutputStream myOutput = new FileOutputStream(outFileName);
 
-            // Open the empty db as the output stream
-            OutputStream myOutput = new FileOutputStream(outFileName);
-
-            // transfer bytes from the inputfile to the outputfile
-            // Truyền bytes dữ liệu từ input đến output
-            int size = myInput.available();
-            byte[] buffer = new byte[size];
-            myInput.read(buffer);
-            myOutput.write(buffer);
-
-            // Close the streams
-            myOutput.flush();
-            myOutput.close();
-            myInput.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = myInput.read(buffer)) > 0) {
+            myOutput.write(buffer, 0, length);
         }
+
+        myOutput.flush();
+        myOutput.close();
+        myInput.close();
     }
 }
