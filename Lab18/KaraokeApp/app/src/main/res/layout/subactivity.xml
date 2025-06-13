@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1976D2"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/txtmaso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#50931"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btnthich"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/btn_star_big_on"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/btnkhongthich"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/btn_star_big_off"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên bài hát:"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/txtbaihat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="999 ĐÓA HOA HỒNG"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lời bài hát:"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/txtloibaihat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Vẫng em chiều nay, áng mây nhẹ theo gió bay, vương vàn đầu đầu đây, để buồn nhung nhớ..."
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tác giả:"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/txttacgia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NHẠC HOA"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
