@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.tab_selector"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.tab_selector"
