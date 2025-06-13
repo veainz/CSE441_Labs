@@ -1,7 +1,6 @@
 package com.example.tab_selector;
 
 import android.app.Activity;
-import android.app.TabActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,7 +10,7 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import java.util.ArrayList;
 
-public class MainActivity extends TabActivity {
+public class MainActivity extends Activity {
     EditText edta, edtb;
     Button btncong;
     ListView lv1;
@@ -39,22 +38,19 @@ public class MainActivity extends TabActivity {
 
     private void Xulycong() {
         // TODO Auto-generated method stub
-        try {
-            int a = Integer.parseInt(edta.getText().toString());
-            int b = Integer.parseInt(edtb.getText().toString());
-            String c = a + " + " + b + " = " + (a + b);
-            list.add(c);
-            myarray.notifyDataSetChanged();
-            edta.setText("");
-            edtb.setText("");
-        } catch (NumberFormatException e) {
-            // Handle invalid input
-        }
+        int a = Integer.parseInt(edta.getText().toString());
+        int b = Integer.parseInt(edtb.getText().toString());
+        String c = a + " + " + b + " = " + (a + b);
+        list.add(c);
+        myarray.notifyDataSetChanged();
+        edta.setText("");
+        edtb.setText("");
     }
 
     private void addControl() {
         // TODO Auto-generated method stub
-        TabHost tab = getTabHost();
+        TabHost tab = (TabHost) findViewById(R.id.tabhost);
+        tab.setup();
 
         TabHost.TabSpec tab1 = tab.newTabSpec("t1");
         tab1.setContent(R.id.tab1);
